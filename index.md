@@ -1,20 +1,20 @@
 ---
 # More detailed instructions (including how to fill these variables for an # online workshop) are available at https://carpentries.github.io/workshop-template/customization/index.html#yaml-header
 # Required variables
-venue: "FIXME"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
+venue: "University College London"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
 address: "FIXME"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
 flag_in_person: ""    # Provide "true" to include text in the general information, stressing the workshop is in-person attendance only.
-country: "FIXME"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
-language: "FIXME"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
-latitude: "FIXME"     # decimal latitude of workshop venue - this should be a number greater than or equal to -90, and less than or equal to 90 (use https://www.latlong.net/)
-longitude: "FIXME"    # decimal longitude of the workshop venue - this should be a number greater than or equal to -180, and less than or equal to 180 (use https://www.latlong.net)
-humandate: "FIXME"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "FIXME"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
-startdate: FIXME      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: FIXME        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+country: "en"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
+language: "en"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
+latitude: "51.52528400"     # decimal latitude of workshop venue - this should be a number greater than or equal to -90, and less than or equal to 90 (use https://www.latlong.net/)
+longitude: "-0.133528000"    # decimal longitude of the workshop venue - this should be a number greater than or equal to -180, and less than or equal to 180 (use https://www.latlong.net)
+humandate: "Sept 30th - Oct 1st, 2026"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humantime: "9:30 am - 5:00 pm"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
+startdate: 2026-09-30      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
+enddate: 2026-10-01        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 instructor: ["instructor one", "instructor two"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["helper one", "helper two"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
-email: ["first@example.org","second@example.org"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
+email: ["arc.education+carpentries@ucl.ac.uk",]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 # Optional variables
 collaborative_notes:  # URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
 eventbrite:           # alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
@@ -65,7 +65,6 @@ And run 'make workshop-check' *before* committing to make sure that changes are 
 </div>
 {% endif %}
 
-
 {% comment %}
 Check DC curriculum
 {% endcomment %}
@@ -77,7 +76,6 @@ It looks like you are setting up a website for a Data Carpentry curriculum but y
 </div>
 {% endunless %}
 {% endif %}
-
 
 {% comment %}
 Check SWC curriculum
@@ -91,7 +89,6 @@ It looks like you are setting up a website for a Software Carpentry curriculum b
 {% endunless %}
 {% endif %}
 
-
 {% comment %}
 Various booking systems are available. They are shown in the config above, if they are empty none will show below.
 {% endcomment %}
@@ -102,7 +99,6 @@ Various booking systems are available. They are shown in the config above, if th
 {% elsif page.pretix %}
 {% include booking/pretix.html %}
 {% endif %}
-
 
 {% comment %}
 EVENTBRITE
@@ -126,7 +122,6 @@ displayed if the 'eventbrite' field in the header is not set.
     });
 </script>
 {% endif %}
-
 
 {% comment %}
 INTRODUCTION
@@ -215,7 +210,7 @@ LOCATION
 
 This block displays the address and links to maps showing directions
 if the latitude and longitude of the workshop have been set.  You
-can use https://www.latlong.net/ to find the lat/long of an
+can use <https://www.latlong.net/> to find the lat/long of an
 address.
 {% endcomment %}
 
@@ -411,7 +406,6 @@ address.
   </div>
 </div>
 
-
 {% comment %}
 WHO CAN ATTEND?
 
@@ -420,9 +414,10 @@ If you would like to specify who can attend the workshop, you can use the sectio
 Move the 'endcomment' tag above the beginning of the following <p> tag to make this section visible.
 
 Edit the text to match who can attend the workshop. For instance:
+
 - This workshop is open to affiliates to ABC university.
 - This workshop is open to the public.
-- If you are interested in attending this workshop, contact me@example.com
+- If you are interested in attending this workshop, contact <me@example.com>
   for more information
 
 <p id="who-can-attend">
@@ -431,18 +426,17 @@ Edit the text to match who can attend the workshop. For instance:
 </p>
 {% endcomment %}
 
-
 {% comment %}
 COLLABORATIVE NOTES
 
 If you want to use an Etherpad, go to
 
-https://pad.carpentries.org/YYYY-MM-DD-site
+<https://pad.carpentries.org/YYYY-MM-DD-site>
 
 where 'YYYY-MM-DD-site' is the identifier for your workshop,
 e.g., '2015-06-10-esu'.
 
-Note we also have a CodiMD (the open-source version of HackMD) available at https://codimd.carpentries.org
+Note we also have a CodiMD (the open-source version of HackMD) available at <https://codimd.carpentries.org>
 {% endcomment %}
 {% if page.collaborative_notes %}
 <h2 id="collaborative_notes">Collaborative Notes</h2>
@@ -450,7 +444,6 @@ Note we also have a CodiMD (the open-source version of HackMD) available at http
 We will use this <a href="{{ page.collaborative_notes }}">collaborative document</a> for chatting, taking notes, and sharing URLs and bits of code.
 </p>
 {% endif %}
-
 
 {% comment %}
 SURVEYS - DO NOT EDIT SURVEY LINKS
@@ -511,7 +504,6 @@ SURVEYS - DO NOT EDIT SURVEY LINKS
   </div>
 </div>
 
-
 {% comment %}
 SCHEDULE
 
@@ -559,7 +551,6 @@ of code below the Schedule `<h2>` header below with
 
 <hr/>
 
-
 {% comment %}
 SETUP
 
@@ -594,9 +585,9 @@ please preview your site before committing, and make sure to run
   <a href="{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
 
-
 {% comment %}
 For online workshops, the section below provides:
+
 - installation instructions for the Zoom client
 - recommendations for setting up Learners' workspace so they can follow along the instructions and the videoconferencing
 
@@ -606,7 +597,6 @@ If you do not use Zoom for your online workshop, edit the file `_includes/instal
 {% if online != "false" %}
   {% include install_instructions/videoconferencing.html %}
 {% endif %}
-
 
 {% comment %}
 These are the installation instructions for the tools used during the workshop.
