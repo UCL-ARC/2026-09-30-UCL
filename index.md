@@ -50,21 +50,6 @@ If the value is not 'true', 'false', 'null', or a number, please use double quot
 And run 'make workshop-check' *before* committing to make sure that changes are good.
 {% endcomment %}
 
-{% if fixmes %}
-<div class="alert alert-danger">
-    <p>
-        This is the Carpentries workshop template. Fill in the required variables as described in the <a href="{{site.url}}{{site.baseurl}}/customization/index.html#yaml-header">customisation</a> instructions to remove this message.
-    </p>
-    <p>
-        If you are running a self-organized workshop or have not put in a workshop request yet, please also fill in <a href="{{site.amy_site}}/forms/self-organised/">this workshop request form</a> to let us know about your workshop and our administrator may contact you if we need any extra information.
-    </p>
-    <p>
-        If this is a pilot workshop for a new lesson, set the <code>pilot</code> field to <code>true</code> in <code>_config.yml</code>.
-        For workshops teaching a lesson in The Carpentries Incubator, remember to uncomment and supply values for <code>incubator_lesson_site</code>, <code>incubator_pre_survey</code>, and <code>incubator_post_survey</code> fields in <code>_config.yml</code>.
-    </p>
-</div>
-{% endif %}
-
 {% comment %}
 Check DC curriculum
 {% endcomment %}
